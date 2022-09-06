@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background:#6f23ff;;
+  background: #6f23ff;
   height: 70px;
   width: 100%;
   position: fixed;
@@ -21,6 +21,7 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
   .header-img {
     height: 40px;
     cursor: pointer;
@@ -40,9 +41,10 @@ header {
 
       a {
         text-decoration: none;
-        color: #ffffff;
+        color: #fff;
         background-color: transparent;
         outline: none;
+
         &:hover {
           color: #c21465;
         }
