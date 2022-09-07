@@ -56,6 +56,45 @@ header {
   }
 }
 
+.movie-section {
+  margin-top: 200px;
+
+  .row {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+
+  .movie-poster {
+    height: 350px;
+    width: 250px;
+  }
+
+  .movie-poster:hover {
+    cursor: pointer;
+  }
+
+  .movie-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 10px;
+  }
+
+  .like-icon {
+    width: 25px;
+    height: 20px;
+  }
+
+  .like-icon:hover {
+    cursor: pointer;
+  }
+
+  .movies-likes {
+    margin-top: 15px;
+    margin-right: 50px;
+  }
+}
+
 .footer-section {
   margin-top: 100%;
   margin-bottom: 0;
