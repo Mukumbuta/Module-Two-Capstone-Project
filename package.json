@@ -46,6 +46,7 @@
     "webpack-dev-server": "^4.10.1"
   },
   "dependencies": {
+    "bootstrap": "^5.2.0",
     "lodash": "^4.17.21",
     "typeface-bebas-neue": "^1.1.13"
   }
