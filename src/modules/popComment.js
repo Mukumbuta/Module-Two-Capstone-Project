@@ -3,7 +3,7 @@ import likeIcon from '../images/red-heart-icon.png';
 
 const popComment = async (event) => {
   const movies = await getAPIMovies();
-  const container = document.querySelector('.comments');
+  const container = document.querySelector('.popup');
   const overlay = document.createElement('div');
   const span = document.createElement('span');
   span.innerHTML = '<span class="close-icon">&times;</span>';
@@ -34,7 +34,7 @@ const popComment = async (event) => {
                     <li><input type = "text" id="name"  name="user_name" maxlength = "30" placeholder="Enter Your name"  required></li>
                     <li><input type="email" id="email" name="user_email" placeholder="Enter your email" required></li>
                     <li><textarea name="message" id="msg" cols="30" rows="10" maxlength = "500" placeholder="Write your comment here" required></textarea></li>
-                    <button type="button" class="btn btn-secondary comment-btn"> Send</button>
+                    <button type="button" class="btn btn-secondary comment-btn send"> Send</button>
                 </ul>
             </form>
             </div>
@@ -50,9 +50,12 @@ const popComment = async (event) => {
   overlay.appendChild(popContent);
   overlay.appendChild(span);
   container.appendChild(overlay);
-
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.movie-section').style.filter = 'blur(3px)';
   document.querySelector('.close-icon').addEventListener('click', () => {
     container.removeChild(overlay);
+    document.body.style.overflow = 'auto';
+    document.querySelector('.movie-section').style.filter = 'blur(0px)';
   });
 };
 
