@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
+$pointer: pointer;
+
 * {
   padding: 0;
   margin: 0;
@@ -86,12 +88,27 @@ header {
   }
 
   .like-icon:hover {
-    cursor: pointer;
+    cursor: $pointer;
   }
 
   .movies-likes {
     margin-top: 15px;
     margin-right: 50px;
+  }
+
+  .comment-btn {
+    font-family: cursive;
+    border: 3px solid #000;
+    box-shadow: 3px 5px #000;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    padding-inline: 50px;
+    font-size: 15px;
+    font-weight: 700;
+
+    .comment-btn:hover {
+      cursor: $pointer;
+    }
   }
 }
 
