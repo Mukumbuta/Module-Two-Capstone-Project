@@ -123,3 +123,136 @@ header {
     margin-left: 20px;
   }
 }
+
+.pop {
+  display: none;
+  position: fixed;
+  top: 20;
+  bottom: 0;
+  left: 20px;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow: auto;
+  background: rgb(193 199 208 / 50%);
+  backdrop-filter: blur(3px);
+  padding: 50px 16px;
+  box-sizing: border-box;
+
+  .close-icon {
+    color: #333;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: 80px;
+    font-size: 60px;
+    top: 20px;
+    cursor: pointer;
+  }
+}
+
+.popContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .movie-image {
+    height: 350px;
+    width: 250px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #6f23ff;
+      text-transform: uppercase;
+    }
+
+    ul {
+      font-style: normal;
+      font-weight: 200;
+      font-size: 17px;
+      line-height: 10px;
+
+      li {
+        list-style: none;
+        padding: 10px;
+        margin: 2px;
+
+        input {
+          margin: 5px;
+          border: none;
+          border-radius: 8px;
+          background: rgb(116, 106, 106);
+          padding: 10px;
+          width: 327px;
+
+          &:focus {
+            border-color: #000;
+          }
+        }
+
+        textarea {
+          color: #b3bac5;
+          width: 327px;
+          padding: 10px;
+          background: rgb(116, 106, 106);
+          border-radius: 8px;
+
+          &:focus {
+            border-color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .movie-summar {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: rgb(14, 13, 13);
+      font-size: 20px;
+      padding: 15px;
+      margin: 10px;
+
+      b {
+        font-size: large;
+      }
+    }
+
+    .genres {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+
+      li {
+        list-style-type: none;
+        color: #6f23ff;
+        padding: 14px;
+      }
+    }
+
+    .movies-likes {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .comments {
+        font-size: 16px;
+        color: #000;
+        cursor: pointer;
+      }
+    }
+  }
+}
