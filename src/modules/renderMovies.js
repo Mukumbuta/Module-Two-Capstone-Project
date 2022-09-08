@@ -21,4 +21,4 @@ const renderMovies = (movies) => {
   });
 };
 
-export default { renderMovies };
+export default renderMovies;

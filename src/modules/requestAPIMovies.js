@@ -2,12 +2,10 @@ import renderMovies from './renderMovies.js';
 
 const getAPIMovies = async () => {
   const apiURL = 'https://api.tvmaze.com/shows';
-  const request = new Request(apiURL);
-  const response = await fetch(request);
-  const textMovieData = await response.text();
-  const jsonMovieData = JSON.parse(textMovieData);
+  const response = await fetch(apiURL);
+  const movies = await response.json();
 
-  renderMovies(jsonMovieData);
+  renderMovies(movies);
 };
 
-export default { getAPIMovies };
+export default getAPIMovies;
