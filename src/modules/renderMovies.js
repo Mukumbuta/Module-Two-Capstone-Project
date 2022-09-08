@@ -17,6 +17,9 @@ const renderMovies = (movies) => {
                                                 <p class="likes-holder">${movie.rating.average}</p>
                                             </div> 
                                         </div>
+                                        <div class="comments">
+                                            <button type="button" class="btn btn-secondary comment-btn"> Comments</button>
+                                        </div>
                                     </div>`;
   });
 };
