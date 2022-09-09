@@ -2,6 +2,7 @@ import getAPIMovies from './requestAPIMovies.js';
 import likeIcon from '../images/red-heart-icon.png';
 import postComment from './postComment.js';
 import getComments from './getComment.js';
+import commentCounter from './commentCounter.js';
 
 const popComment = async (event) => {
   const movies = await getAPIMovies();
@@ -49,7 +50,7 @@ const popComment = async (event) => {
         values.forEach((comment) => {
           const comments = document.querySelector('.comment-Section');
           const numberComments = document.querySelector('.add-comments');
-          numberComments.innerHTML = `Comments (${values.length})`;
+          numberComments.innerHTML = `Comments (${commentCounter(values)})`;
           const commentSection = document.createElement('div');
           commentSection.classList.add('commet-field');
           commentSection.innerHTML += `
