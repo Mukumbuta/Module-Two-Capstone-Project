@@ -297,6 +297,11 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .feedback {
+          border: 1px solid black;
+          border-radius: 2px;
+        }
       }
     }
   }
