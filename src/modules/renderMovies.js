@@ -1,5 +1,6 @@
 import likeIcon from '../images/red-heart-icon.png';
 import popup from './popComment.js';
+import getComments from './getComment.js';
 
 const renderMovies = (movies) => {
   movies.forEach((movie) => {
@@ -26,6 +27,7 @@ const renderMovies = (movies) => {
   commentBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       popup(e.target.id);
+      getComments(e.target.id);
     });
   });
 };

@@ -5,4 +5,5 @@ import './style.scss';
 window.addEventListener('load', async () => {
   const movies = await getAPIMovies();
   renderMovies(movies);
+  // getComments();
 });

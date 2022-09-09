@@ -1,5 +1,7 @@
 import getAPIMovies from './requestAPIMovies.js';
 import likeIcon from '../images/red-heart-icon.png';
+import postComment from './postComment.js';
+import getComments from './getComment.js';
 
 const popComment = async (event) => {
   const movies = await getAPIMovies();
@@ -26,13 +28,12 @@ const popComment = async (event) => {
                 <div class="col movies-likes">
                     <div><img src="${likeIcon}" class="like-icon" alt="Red Heart Icon">
                     <p class="likes-holder">${movie.rating.average}</p></div>
-                    <div class ="comments"><p>Comments (${movie.rating.average})</p></div>
+                    <div class ="comment-Section"><p class="add-comments"></p></div>
                 </div>
-                <form action="https://formspree.io/f/mzboldye" method="post" id="form">
+                <form action="#" method="post" id="form">
                 <p>Add a comment</p>
                 <ul>
-                    <li><input type = "text" id="name"  name="user_name" maxlength = "30" placeholder="Enter Your name"  required></li>
-                    <li><input type="email" id="email" name="user_email" placeholder="Enter your email" required></li>
+                    <li><input class="username" type = "text" id="name"  name="user_name" maxlength = "30" placeholder="Enter Your name"  required></li>
                     <li><textarea name="message" id="msg" cols="30" rows="10" maxlength = "500" placeholder="Write your comment here" required></textarea></li>
                     <button type="button" class="btn btn-secondary comment-btn send"> Send</button>
                 </ul>
@@ -42,6 +43,26 @@ const popComment = async (event) => {
 
 
             `;
+      const data = getComments(event);
+
+      data.then((values) => {
+        values.forEach((comment) => {
+          const comments = document.querySelector('.comment-Section');
+          const numberComments = document.querySelector('.add-comments');
+          numberComments.innerHTML = `Comments (${values.length})`;
+          const commentSection = document.createElement('div');
+          commentSection.classList.add('commet-field');
+          commentSection.innerHTML += `
+                  <ul class= "feedback">
+                      <li>${comment.creation_date}</li>
+                      <li>${comment.username}</li>
+                      <li>${comment.comment}</li>
+
+                  </ul>
+                `;
+          comments.appendChild(commentSection);
+        });
+      });
     }
   });
 
@@ -56,6 +77,31 @@ const popComment = async (event) => {
     container.removeChild(overlay);
     document.body.style.overflow = 'auto';
     document.querySelector('.movie-section').style.filter = 'blur(0px)';
+  });
+  const sendBtn = document.querySelector('.send');
+  sendBtn.addEventListener('click', () => {
+    const userName = document.querySelector('.username');
+    const userComment = document.querySelector('#msg');
+    postComment(event, userName, userComment);
+    const data = getComments(event);
+    data.then((values) => {
+      values.forEach((comment) => {
+        const comments = document.querySelector('.comment-Section');
+        const commentSection = document.createElement('div');
+        commentSection.classList.add('commet-field');
+        const numberComments = document.querySelector('.add-comments');
+        numberComments.innerHTML = `Comments (${values.length})`;
+        commentSection.innerHTML += `
+                  <ul class= "feedback">
+                      <li>${comment.creation_date}</li>
+                      <li>${comment.username}</li>
+                      <li>${comment.comment}</li>
+
+                  </ul>
+                `;
+        comments.appendChild(commentSection);
+      });
+    });
   });
 };
 

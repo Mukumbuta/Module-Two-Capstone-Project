@@ -252,9 +252,10 @@ header {
 
     .movies-likes {
       display: flex;
+      flex-direction: column;
       gap: 5px;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
 
       .like-icon {
         width: 25px;
@@ -269,6 +270,33 @@ header {
         font-size: 16px;
         color: #000;
         cursor: pointer;
+      }
+
+      .commet-field {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 15px;
+        }
+
+        li {
+          list-style-type: none;
+          padding: 15px;
+        }
+      }
+
+      .comment-Section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
