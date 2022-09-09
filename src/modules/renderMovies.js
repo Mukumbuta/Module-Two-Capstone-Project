@@ -14,9 +14,9 @@ const renderMovies = (movies) => {
                                                 <p>${movie.name}</p>
                                             </div>
                                             <div class="col movies-likes">
-                                                <img src="${likeIcon}" class="like-icon" alt="Red Heart Icon">
-                                                <p class="likes-holder">${movie.rating.average}</p>
-                                            </div>
+                                                <img src="${likeIcon}" id="like-movie${movie.id}" class="like-icon" alt="Red Heart Icon">
+                                                <p class="likes-holder" id="likes-holder${movie.id}">0 likes</p>
+                                            </div> 
                                         </div>
                                         <div class="comments">
                                             <button type="button" class="btn btn-secondary comment-btn" id = "${movie.id}"> Comments</button>
