@@ -54,9 +54,9 @@ const popComment = async (event) => {
           commentSection.classList.add('commet-field');
           commentSection.innerHTML += `
                   <ul class= "feedback">
-                      <li>${comment.creation_date}</li>
-                      <li>${comment.username}</li>
-                      <li>${comment.comment}</li>
+                      <li>On ${comment.creation_date}</li>
+                      <li>By : ${comment.username}</li>
+                      <li> Content : ${comment.comment}</li>
 
                   </ul>
                 `;
@@ -73,6 +73,10 @@ const popComment = async (event) => {
   container.appendChild(overlay);
   document.body.style.overflow = 'hidden';
   document.querySelector('.movie-section').style.filter = 'blur(3px)';
+  document.querySelector('.movie-section').addEventListener('click', () => {
+    container.removeChild(overlay);
+    document.querySelector('.movie-section').style.filter = 'blur(0px)';
+  });
   document.querySelector('.close-icon').addEventListener('click', () => {
     container.removeChild(overlay);
     document.body.style.overflow = 'auto';
@@ -93,9 +97,9 @@ const popComment = async (event) => {
         numberComments.innerHTML = `Comments (${values.length})`;
         commentSection.innerHTML += `
                   <ul class= "feedback">
-                      <li>${comment.creation_date}</li>
-                      <li>${comment.username}</li>
-                      <li>${comment.comment}</li>
+                      <li>On ${comment.creation_date}</li>
+                      <li>By : ${comment.username}</li>
+                      <li>Content : ${comment.comment}</li>
 
                   </ul>
                 `;
