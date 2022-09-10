@@ -15,7 +15,7 @@
 
 ## Project Documentation
 
-- Here is the [link]() to our Zoom video presentation
+- Here is the [link](https://drive.google.com/drive/folders/17o3iaSsckB2VS-Q7n8N79L5p4VNUMSq4?usp=sharing) to our Zoom video presentation
 
 ## Website Mockup 📱 💻 🖥️
 ![screenshot](./src/images/screen_shoot1.png)
@@ -25,9 +25,6 @@
 ## Deployment
 - The live version of this web application is deployed here:
 - Link:   https://mukumbuta.github.io/Module-Two-Capstone-Project/
-
-## Live Demo
-https://www.loom.com/share/140ff16e4773437a9d640ab33d98f848
 
 :smile: enjoy watching [TVMAZE](https://maaloum.github.io/into-film/dist/)
 
