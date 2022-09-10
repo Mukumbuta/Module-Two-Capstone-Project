@@ -5,7 +5,7 @@ import getComments from './getComment.js';
 const renderMovies = (movies) => {
   movies.forEach((movie) => {
     const movieDetails = document.querySelector('.row');
-    movieDetails.innerHTML += `<div class="movie-details">
+    movieDetails.innerHTML += `<div id="like-movie${movie.id}" class="movie-details">
                                         <div class="col">
                                             <img class="movie-poster" src="${movie.image.original}" alt="Movie Poster">
                                         </div>
