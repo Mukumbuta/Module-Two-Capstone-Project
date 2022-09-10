@@ -1,14 +1,15 @@
 import getAPIMovies from './modules/requestAPIMovies.js';
-import { totalMovies, renderMovies } from './modules/renderMovies.js';
+import renderMovies from './modules/renderMovies.js';
 import {
   postLikes, getLikes, displayLikes, showLikes,
 } from './modules/showLikes.js';
 import './style.scss';
+import totalMovies from './modules/totalItems.js';
 
 window.addEventListener('load', async () => {
   const movies = await getAPIMovies();
   renderMovies(movies);
-  totalMovies(movies);
+  totalMovies();
 
   const movieContainer = document.querySelectorAll('.movie-details');
   movieContainer.forEach((movie) => {
