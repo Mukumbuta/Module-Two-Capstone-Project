@@ -32,10 +32,4 @@ const renderMovies = (movies) => {
   });
 };
 
-const totalMovies = (movies) => {
-  const moviesCount = movies.length;
-  const displayTotalMovies = document.getElementById('total-movies');
-  displayTotalMovies.innerText = `Movies (${moviesCount})`;
-};
-
-export { totalMovies, renderMovies };
+export default renderMovies;
