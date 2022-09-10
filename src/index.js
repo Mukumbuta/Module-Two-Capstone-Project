@@ -1,6 +1,8 @@
 import getAPIMovies from './modules/requestAPIMovies.js';
 import { totalMovies, renderMovies } from './modules/renderMovies.js';
-import { postLikes, getLikes, displayLikes, showLikes } from './modules/showLikes.js';
+import {
+  postLikes, getLikes, displayLikes, showLikes,
+} from './modules/showLikes.js';
 import './style.scss';
 
 window.addEventListener('load', async () => {
